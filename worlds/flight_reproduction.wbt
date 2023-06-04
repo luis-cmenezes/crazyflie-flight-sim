@@ -1,0 +1,185 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.07829291349136117 0.4921455229879988 -0.8669850078864704 0.36294671295784176
+  position -3.9108896086427545 0.9812402191086274 0.8064387509842527
+  follow "Crazyflie"
+  followType "None"
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.1 -0.5 0.3
+}
+RectangleArena {
+  floorSize 5 5
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+}
+DEF Crazyflie Robot {
+  translation 0 0 0.015
+  rotation 1 0 0 0
+  children [
+    DEF BODY Transform {
+      translation 0 0 -0.015
+      children [
+        Group {
+        }
+        CadShape {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/bitcraze/crazyflie/protos/meshes/cf2_assembly.dae"
+          ]
+        }
+      ]
+    }
+    DEF MULTIRANGER Transform {
+      translation 0 0 0.02
+      children [
+        DistanceSensor {
+          rotation 0 0 1 -1.57
+          name "range_right"
+          lookupTable [
+            0 0 0
+            2 2000 0
+          ]
+        }
+        DistanceSensor {
+          rotation 0 0 1 3.14
+          name "range_back"
+          lookupTable [
+            0 0 0
+            2 2000 0
+          ]
+        }
+        DistanceSensor {
+          rotation 0 0 1 1.57
+          name "range_left"
+          lookupTable [
+            0 0 0
+            2 2000 0
+          ]
+        }
+        DistanceSensor {
+          name "range_front"
+          lookupTable [
+            0 0 0
+            2 2000 0
+          ]
+        }
+      ]
+    }
+    Camera {
+      translation 0.03 0 0.01
+      fieldOfView 0.87
+      width 324
+      height 324
+    }
+    GPS {
+    }
+    Gyro {
+    }
+    InertialUnit {
+    }
+    DEF M1 Propeller {
+      shaftAxis 0 0 1
+      centerOfThrust 0.031 -0.031 0.008
+      thrustConstants -4e-05 0
+      torqueConstants 2.4e-06 0
+      device RotationalMotor {
+        name "m1_motor"
+        maxVelocity 600
+        maxTorque 30
+      }
+      slowHelix DEF M1_MOTOR Solid {
+        translation 0.031 -0.031 0.008
+        rotation 0 0 1 2.5639199482002226
+        children [
+          DEF PROP_SHAPE Shape {
+            appearance DEF PLASTIC PBRAppearance {
+              baseColor 0 0 0
+              metalness 0.3
+            }
+            geometry Mesh {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/bitcraze/crazyflie/protos/meshes/ccw_prop.dae"
+              ]
+            }
+          }
+        ]
+      }
+    }
+    DEF M2 Propeller {
+      shaftAxis 0 0 1
+      centerOfThrust -0.031 -0.031 0.008
+      thrustConstants 4e-05 0
+      torqueConstants 2.4e-06 0
+      device RotationalMotor {
+        name "m2_motor"
+        maxVelocity 600
+        maxTorque 30
+      }
+      slowHelix DEF M2_MOTOR Solid {
+        translation -0.031 -0.031 0.008
+        rotation 0 0 1 -2.5639199482002226
+        children [
+          USE PROP_SHAPE
+        ]
+      }
+    }
+    DEF M3 Propeller {
+      shaftAxis 0 0 1
+      centerOfThrust -0.031 0.031 0.008
+      thrustConstants -4e-05 0
+      torqueConstants 2.4e-06 0
+      device RotationalMotor {
+        name "m3_motor"
+        maxVelocity 600
+        maxTorque 30
+      }
+      slowHelix DEF M3_MOTOR Solid {
+        translation -0.031 0.031 0.008
+        rotation 0 0 1 2.5639199482002226
+        children [
+          USE PROP_SHAPE
+        ]
+      }
+    }
+    DEF M4 Propeller {
+      shaftAxis 0 0 1
+      centerOfThrust 0.031 0.031 0.008
+      thrustConstants 4e-05 0
+      torqueConstants 2.4e-06 0
+      device RotationalMotor {
+        name "m4_motor"
+        maxVelocity 600
+        maxTorque 30
+      }
+      slowHelix DEF M4_MOTOR Solid {
+        translation 0.031 0.031 0.007
+        rotation 0 0 1 -2.5639199482002226
+        children [
+          USE PROP_SHAPE
+        ]
+      }
+    }
+  ]
+  name "Crazyflie"
+  model "Bitcraze's Crazyflie"
+  boundingObject Cylinder {
+    height 0.03
+    radius 0.05
+  }
+  controller "flight_reproductor"
+  supervisor TRUE
+}
