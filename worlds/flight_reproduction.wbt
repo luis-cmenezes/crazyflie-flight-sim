@@ -4,11 +4,10 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
 
 WorldInfo {
-  basicTimeStep 16
 }
 Viewpoint {
-  orientation 0.07829291349136117 0.4921455229879988 -0.8669850078864704 0.36294671295784176
-  position -3.9108896086427545 0.9812402191086274 0.8064387509842527
+  orientation -0.06026024312426557 0.057899332929821176 0.9965020674062278 1.6143003343206594
+  position 0.19150202989036735 -5.943785878951055 1.0191569108543321
   follow "Crazyflie"
   followType "None"
 }
@@ -182,4 +181,12 @@ DEF Crazyflie Robot {
   }
   controller "flight_reproductor"
   supervisor TRUE
+}
+Shape {
+  geometry PointSet {
+    coord DEF TRAJECTORY_COORDINATES Coordinate {
+    }
+  }
+  castShadows FALSE
+  isPickable FALSE
 }
