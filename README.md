@@ -2,6 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/luis-cmenezes/crazyflie-flight-sim)
 ![GitHub repo size](https://img.shields.io/github/repo-size/luis-cmenezes/crazyflie-flight-sim)
+![GitHub top language](https://img.shields.io/github/languages/top/luis-cmenezes/crazyflie-flight-sim)
 ![Instagram LASEC](https://img.shields.io/badge/Instragram-LASEC-red?link=https://www.instagram.com/lasecufu/&logo=Instagram)
 
 ![](example-gif.gif)
