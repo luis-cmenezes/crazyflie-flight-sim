@@ -4,7 +4,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/luis-cmenezes/crazyflie-flight-sim)
 ![Instagram LASEC](https://img.shields.io/badge/Instragram-LASEC-red?link=https://www.instagram.com/lasecufu/&logo=Instagram)
 
-<img src="example-image.png">
+![](example-gif.gif)
 
 > O projeto visa replicar o voo e as leituras dos sensores de distância de um drone Crazyflie real no simulador Webots, facilitando e melhorando a visualização
 
