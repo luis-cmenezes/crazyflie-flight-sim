@@ -1,4 +1,4 @@
-#VRML_SIM R2023a utf8
+#VRML_SIM R2023b utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
@@ -7,7 +7,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation 0.1354278812554306 0.32178718074829626 -0.9370764639477017 0.84422617745049
-  position -2.8538398285389066 2.8036160525680542 1.2701186024242033
+  position -2.091156524803841 2.0234954722486216 0.9480541910086341
   follow "Crazyflie"
   followType "None"
 }
@@ -29,7 +29,6 @@ RectangleArena {
 }
 DEF Crazyflie Robot {
   translation 0 0 0.015
-  rotation 1 0 0 0
   children [
     DEF M1_MOTOR Solid {
       translation 0.031 -0.031 0.008
@@ -102,7 +101,7 @@ DEF Crazyflie Robot {
         }
       ]
     }
-    DEF BODY Transform {
+    DEF BODY Pose {
       translation 0 0 -0.015
       children [
         Group {

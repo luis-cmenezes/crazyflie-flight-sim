@@ -15,7 +15,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Gerar movimentação com base em coordenadas no simulador
 - [x] Marcar a movimentação na simulação
-- [ ] Replicar a trajetória com base em arquivo de saída do drone real
+- [x] Replicar a trajetória com base em arquivo de saída do drone real
+- [ ] Replicar rotação (row, pitch, yaw) do drone em voo
 - [ ] Marcar leituras dos sensores de distância na simulação
 - [ ] Integração com ROS2 para tempo real
 
