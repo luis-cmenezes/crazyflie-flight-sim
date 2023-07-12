@@ -23,8 +23,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão mais recente do Webots
 * Você tem uma máquina Linux (Recomendado, mas não exclusivo).
+* Você instalou a versão mais recente do Webots.
+* Você instalou a versão mais recente do Python e o PyQt5.
+``` pip install PyQt5 ```
 
 ## 🚀 Instalando e usando o Replicador de voo Crazyflie em Simulação
 
