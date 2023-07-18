@@ -6,8 +6,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.1354278812554306 0.32178718074829626 -0.9370764639477017 0.84422617745049
-  position -2.091156524803841 2.0234954722486216 0.9480541910086341
+  orientation -0.13757413921126094 0.08561267399617484 0.9867845895997288 2.040199621386132
+  position 3.5019592754109543 -7.223129789156829 2.538069205526438
   follow "Crazyflie"
   followType "None"
 }
@@ -21,7 +21,7 @@ DirectionalLight {
   direction 0.1 -0.5 0.3
 }
 RectangleArena {
-  floorSize 2 2
+  floorSize 10 10
   floorAppearance Parquetry {
     type "light strip"
   }
@@ -30,6 +30,66 @@ RectangleArena {
 DEF Crazyflie Robot {
   translation 0 0 0.015
   children [
+    DEF BACK_SENSOR Pose {
+      translation -0.0005 0 0
+      rotation 0 1 0 1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry DEF BACK_LASER Cylinder {
+            height 0.001
+            radius 0.005
+          }
+        }
+      ]
+    }
+    DEF RIGHT_SENSOR Pose {
+      translation 0 -0.005 0
+      rotation 1 0 0 1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry DEF RIGHT_LASER Cylinder {
+            height 0.001
+            radius 0.005
+          }
+        }
+      ]
+    }
+    DEF LEFT_SENSOR Pose {
+      translation 0 0.005 0
+      rotation 1 0 0 1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+          }
+          geometry DEF LEFT_LASER Cylinder {
+            height 0.001
+            radius 0.005
+          }
+        }
+      ]
+    }
+    DEF FRONT_SENSOR Pose {
+      translation 0.005 0 0
+      rotation 0 1 0 1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry DEF FRONT_LASER Cylinder {
+            height 0.001
+            radius 0.005
+          }
+        }
+      ]
+    }
     DEF M1_MOTOR Solid {
       translation 0.031 -0.031 0.008
       rotation 0 0 1 2.5639199482002226
